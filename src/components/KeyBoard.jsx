@@ -1,9 +1,9 @@
 import React from 'react';
-import './KeyBoard.css';
+//import './KeyBoard.css';
 
-export default function KeyBoard({ setKeyPressed, keyboardPainter, setKeyboardPainter,gameEnded }) { 
+export default function KeyBoard({ setKeyPressed, keyboardPainter, setKeyboardPainter, gameEnded }) {
     const keysRef = React.useRef(document.getElementsByClassName('key'));// Reference to the keyboard element
-    
+
     React.useEffect(() => {
         //^ paints the keyboard with the colors of the letters
         for (let i = 0; i < keysRef.current.length; i++) {
@@ -16,16 +16,16 @@ export default function KeyBoard({ setKeyPressed, keyboardPainter, setKeyboardPa
 
     }, [keyboardPainter, setKeyboardPainter])// Reference to the keyboard element
 
-    React.useEffect(() => { 
+    React.useEffect(() => {
         //^ removes the colors of the letters from the keyboard when the game ends
         if (gameEnded) {
             setTimeout(() => {
-                
+
                 for (let i = 0; i < keysRef.current.length; i++) {
-                    if(keysRef.current[i].classList.contains('green')) {
+                    if (keysRef.current[i].classList.contains('green')) {
                         keysRef.current[i].classList.remove('green');
                     }
-                    if(keysRef.current[i].classList.contains('yellow')) {
+                    if (keysRef.current[i].classList.contains('yellow')) {
                         keysRef.current[i].classList.remove('yellow');
                     }
                     if (keysRef.current[i].classList.contains('gray')) {
@@ -34,7 +34,7 @@ export default function KeyBoard({ setKeyPressed, keyboardPainter, setKeyboardPa
                 }
             }, 6000);
         }
-    },[gameEnded])// Reference to the keyboard element
+    }, [gameEnded])// Reference to the keyboard element
 
     function handleKeyDown(e) { //! שומר את האות שנלחצה ע"י שימוש בעכבר
         if (e.nativeEvent.pointerType === 'mouse') {

@@ -1,6 +1,6 @@
 import React from 'react';
-import './GameBoard.css';
 import GameBoardRow from './GameBoard/GameBoardRow';
+//import './GameBoard.css';
 
 
 export default function GameBoard({ setErrorAnimation, errorAnimation,
