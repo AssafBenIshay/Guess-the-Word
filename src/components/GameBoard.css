@@ -1,0 +1,134 @@
+.gameBoard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 400px;
+    ;
+    min-height: 500px;
+    background-color: #137;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 5px 20px;
+    margin: 7px auto;
+    font-family: 'Arial', sans-serif;
+    font-size: 1.2em;
+    color: #333;
+    text-align: center;
+    border: 2px solid #ccc;
+}
+
+.gameBoardRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 5px 0;
+    width: 100%;
+    gap: 8px;
+}
+
+.gameBoardLetter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border: 0.5px solid #271c08;
+    border-radius: 5px;
+    min-width: 3.8rem;
+    overflow: hidden;
+}
+
+.green {
+    background-color: #6aaa64;
+    color: white;
+}
+
+.yellow {
+    background-color: #c9ad33;
+    color: white;
+}
+
+.gray {
+    background-color: #787c7e;
+    color: white;
+}
+
+.gameBoardLetter h1 {
+    margin: 0;
+    padding: 5px 20px;
+    box-sizing: border-box;
+    font-size: 2em;
+    font-weight: bold;
+
+}
+
+.errorAnimation {
+    animation: nope 0.4s ease;
+}
+
+.winningWordAnimation {
+    animation: winningWordAnumation 2s ease forwards;
+    z-index: 100;
+    box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.77), inset 0.5px 0.5px 15px rgba(0, 0, 0, 0.3), inset 0.5px 0.5px 2px rgba(255, 254, 254, 0.315), inset -5px -5px 15px rgba(0, 0, 0, 0.315);
+    background-color: rebeccapurple;
+    transition: all 0.5s ease-in-out;
+}
+
+@keyframes nope {
+    0% {
+        transform: translateX(0px);
+    }
+
+    25% {
+        transform: translateX(-40px);
+    }
+
+    50% {
+        transform: translateX(30px);
+    }
+
+    75% {
+        transform: translateX(-10px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes winningWordAnumation {
+    0% {
+        transform: scale(1) translateY(0px) rotate(0deg);
+        opacity: 1;
+
+    }
+
+    50% {
+        transform: scale(0.5) translateY(100px) rotate(360deg);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(10) translateY(0px) rotate(1720deg);
+        opacity: 0;
+    }
+
+}
+
+.win-style {
+    background-color: rebeccapurple;
+    color: yellow;
+    animation-delay: 4000ms;
+    animation: win 0.5s ease forwards;
+    width: 400px;
+}
+
+@keyframes win {
+    0% {
+        transform: scale(1) rotate(0deg) translateY(0px);
+    }
+
+    100% {
+        transform: scale(3) rotate(-360deg) translateY(-100px);
+    }
+}
